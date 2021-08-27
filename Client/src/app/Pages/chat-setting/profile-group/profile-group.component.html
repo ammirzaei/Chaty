@@ -1,0 +1,66 @@
+<div class="panel">
+  <div class="panel-header">
+    <div class="avatar">
+      <input type="file" id="UploadAvatar">
+      <label for="UploadAvatar" class="label-upload">
+        <img [src]="Profile.imageName" [alt]="Profile.name">
+        <mat-icon>edit</mat-icon>
+      </label>
+    </div>
+    <h2>{{Profile.name}}</h2>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-12">
+        <div class="panel-body-col edit" title="نام">
+          <h3>
+            <mat-icon>perm_contact_calendar</mat-icon>
+          </h3>
+          <span>{{Profile.name}}</span>
+          <p>ویرایش</p>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12">
+        <div class="panel-body-col edit" title="بیو">
+          <h3>
+            <mat-icon>assignment</mat-icon>
+          </h3>
+          <span>{{Profile.bio}}</span>
+          <p>ویرایش</p>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12">
+        <div class="panel-body-col groups" title="سازنده">
+          <h3>
+            <mat-icon>manage_accounts</mat-icon>
+          </h3>
+          <span title="سازنده">
+            <a [routerLink]="['/Profile/User',Profile.createUser.userID]">{{Profile.createUser.name}}</a>
+          </span>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12">
+        <div class="panel-body-col" title="تاریخ ایجاد">
+          <h3>
+            <mat-icon>date_range</mat-icon>
+          </h3>
+          <span>{{Profile.createDate}}</span>
+        </div>
+      </div>
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="panel-body-col groups" title="اعضا">
+          <h3>
+            <mat-icon>groups</mat-icon>
+          </h3>
+          <span title="تعداد اعضا" class="groups-title">{{Profile.listUsers.length + ' عضو ' + ':'}}</span>
+          <span *ngFor="let item of Profile.listUsers" title="عضو" [routerLink]="['/Profile/User',item.userID]">
+            <label [class]="CheckOnlineUser(item.userID)"
+              [title]="CheckOnlineUser(item.userID)=='online'?'آنلاین':'آفلاین'"></label>
+            <a [routerLink]="['/Profile/User',item.userID]">{{item.name}}</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-alert [ParentData]="AlertData" (ChildData)="CloseAlert()" *ngIf="IsAlert"></app-alert>

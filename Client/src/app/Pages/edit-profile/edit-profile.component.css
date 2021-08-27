@@ -1,0 +1,8 @@
+input[type='text'], textarea {
+    width: 400px;
+}
+
+textarea {
+    min-height: 150px;
+    max-height: 300px;
+}

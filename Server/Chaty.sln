@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chaty", "Chaty\Chaty.csproj", "{1B57429E-F111-4807-9C1B-EA9CB03C00D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chaty.Core", "Chaty.Core\Chaty.Core.csproj", "{396B6363-6BBB-42D2-936A-205F128A6DE3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chaty.Data", "Chaty.Data\Chaty.Data.csproj", "{2A723FAE-9036-4FF6-87EE-9DA3EE90D600}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1B57429E-F111-4807-9C1B-EA9CB03C00D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B57429E-F111-4807-9C1B-EA9CB03C00D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B57429E-F111-4807-9C1B-EA9CB03C00D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B57429E-F111-4807-9C1B-EA9CB03C00D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{396B6363-6BBB-42D2-936A-205F128A6DE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{396B6363-6BBB-42D2-936A-205F128A6DE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{396B6363-6BBB-42D2-936A-205F128A6DE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{396B6363-6BBB-42D2-936A-205F128A6DE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A723FAE-9036-4FF6-87EE-9DA3EE90D600}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A723FAE-9036-4FF6-87EE-9DA3EE90D600}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A723FAE-9036-4FF6-87EE-9DA3EE90D600}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A723FAE-9036-4FF6-87EE-9DA3EE90D600}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7500C55A-2D3A-4693-8D5F-F23222CB663C}
+	EndGlobalSection
+EndGlobal

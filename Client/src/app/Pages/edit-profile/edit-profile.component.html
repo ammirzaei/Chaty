@@ -1,0 +1,15 @@
+<div class="chatSetting-dialog">
+  <h2 matDialogTitle>ویرایش پروفایل</h2>
+  <mat-dialog-content>
+    <div class="mb-3">
+      <input type="text" placeholder="{{Command}}" class="form-control" *ngIf="Command=='نام'" [(ngModel)]="name">
+      <textarea class="form-control" placeholder="{{Command}}" *ngIf="Command=='بیو'" [(ngModel)]="bio"></textarea>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <div class="command">
+      <button mat-raised-button class="bg-43aa8b" (click)="OnSubmit()" [mat-dialog-close]="true">ویرایش</button>
+      <button mat-raised-button class="bg-b8b8ff" matDialogClose>لغو</button>
+    </div>
+  </mat-dialog-actions>
+</div>

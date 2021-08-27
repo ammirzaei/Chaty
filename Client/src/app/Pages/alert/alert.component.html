@@ -1,0 +1,6 @@
+<div class="alert" [class]="Data.alertClassColor" #alert>
+    <span>{{Data.alertMessage}}</span>
+    <span *ngIf="Data.alertClose" (click)="SetCloseAlert()"> 
+        <i class="mdi mdi-18px mdi-close"></i>
+    </span>
+</div>

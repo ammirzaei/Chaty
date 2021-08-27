@@ -1,0 +1,33 @@
+<div class="chatSetting-dialog">
+    <h2 matDialogTitle>ایجاد گفتگو جدید</h2>
+    <mat-dialog-content>
+        <div class="input-group mb-3"> 
+            <button class="btn btn-outline-primary" type="button" id="button-addon2" (click)="GetResultSearch()">
+                <i class="mdi mdi-24px mdi-magnify"></i>
+            </button>
+            <input type="text" placeholder="شماره تلفن" class="form-control" (keyup)="Typing($event)" aria-describedby="button-addon2" #mobile>
+        </div>
+        <div class="users">
+            <h3 *ngIf="ResultSearch.length>0"> نتیجه جستجو ({{ResultSearch.length}})</h3>
+            <h3 *ngIf="IsStartSearch&&ResultSearch.length==0">کاربری یافت نشد!</h3>
+            <ul *ngIf="ResultSearch.length>0">
+                <li *ngFor="let item of ResultSearch;let index = index" (click)="SelectUser(item)"
+                    [class]="CheckExistUser(item.userID)?'select':''">                  
+                    <img [src]="item.imageName" [alt]="item.name" width="30" height="30" *ngIf="item.imageName!=null">
+                    <div class="img-empty" *ngIf="item.imageName==null">
+                        <p>{{CompressProfileName(item.name)}}</p>
+                    </div>
+                    <span>{{item.name}}</span>
+                </li>
+            </ul>
+        </div>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+        <div class="command">
+            <button mat-raised-button class="bg-blue" [disabled]="ListSelectUser.length<1"
+                (click)="StartContact()">{{ListSelectUser.length<2?'ایجاد گفتگو':' ایجاد گروه ' + '
+                    ('+ListSelectUser.length + ')' }}</button>
+                    <button mat-raised-button class="bg-b8b8ff" matDialogClose>لغو</button>
+        </div>
+    </mat-dialog-actions>
+</div>

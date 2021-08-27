@@ -1,0 +1,119 @@
+/* You can add global styles to this file, and also import other style files */
+
+@font-face {
+  font-family: "iranyekanwebbold";
+  src: url("assets/fonts/iranyekanwebbold.eot") format("eot"), url("assets/fonts/iranyekanwebbold.ttf") format("ttf"), url("assets/fonts/iranyekanwebbold.woff") format("woff"), url("assets/fonts/iranyekanwebbold.woff2") format("woff2");
+  font-weight: normal;
+}
+
+html, body {
+  height: 100%;
+  font-family: "iranyekanwebbold" !important;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.row>* {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+a, a:link, a:active, a:visited {
+  text-decoration: none;
+  color: rgb(41, 37, 37);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "iranyekanwebbold" !important;
+}
+
+ul, li {
+  list-style: none;
+}
+
+ul {
+  padding-left: 0;
+}
+
+main {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.bg-blue {
+  background-color: #247ba0;
+  color: #ffffff;
+  font-family: "iranyekanwebbold";
+}
+
+.bg-red {
+  background-color: #f25f5c;
+  color: #ffffff;
+  font-family: "iranyekanwebbold";
+}
+
+.bg-b8b8ff {
+  background-color: #b8b8ff;
+  color: #ffffff;
+  font-family: "iranyekanwebbold";
+}
+
+.bg-43aa8b {
+  background-color: #43aa8b;
+  color: #ffffff;
+  font-family: "iranyekanwebbold";
+}
+
+.hide {
+  display: none;
+}
+
+.clear {
+  clear: both;
+}
+
+.main {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+mat-form-field {
+  text-align: right !important;
+}
+
+mat-form-field, button {
+  font-family: "iranyekanwebbold" !important;
+}
+
+.form-group {
+  display: block;
+  margin: 10px 0;
+}
+
+.form-group input {
+  border-radius: 8px;
+  padding: 10px;
+  background-color: #ffffff;
+  font-family: "iranyekanwebbold";
+  width: 100%;
+}
+
+mat-dialog-actions .command button {
+  display: inline-block;
+}
+
+.chatSetting-dialog {
+  padding: 20px 20px;
+  text-align: center;
+}
+
+.pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}

@@ -1,0 +1,6 @@
+<main>
+    <div class="loader" *ngIf="_loaderService.IsLoading | async">
+        <mat-spinner></mat-spinner>
+    </div>
+    <router-outlet></router-outlet>
+</main>

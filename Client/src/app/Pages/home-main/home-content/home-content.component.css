@@ -1,0 +1,39 @@
+.home-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1;
+}
+
+.home-content>img {
+    width: 50%;
+    margin: 20px 0;
+    border-bottom-right-radius: 30%;
+}
+
+.home-content>.home-des {
+    text-align: center;
+    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.1), 1px 1px 5px rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 50px;
+    background-color: rgba(255, 255, 255, 0.4);
+    position: relative;
+}
+
+.home-content>.home-des>h1 {
+    border-bottom: 4px solid #407bff;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+}
+
+.home-content>.home-des>a.btn {
+    background-color: #5274b9;
+    color: #fff;
+    padding: 6px 40px;
+    transition: all 600ms ease-out;
+}
+
+.home-content>.home-des>a.btn:hover {
+    background-color: #407bff;
+}

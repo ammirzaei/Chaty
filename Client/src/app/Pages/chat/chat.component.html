@@ -1,0 +1,74 @@
+<div id="main" #scrollMe [scrollTop]="scrollMe.scrollHeight">
+    <div class="comment">
+        <div class="chat" [class]="item.userID == UserID ? 'my':''" *ngFor="let item of AllComments;let index = index;">
+            <div class="box">
+                <div class="box-item">
+                    <h4>{{item.name}}</h4>
+                    <span class="pre">{{item.message}}</span>
+                    <div class="box-item-detail">
+                        <span>
+                            <i [class]="item.isSee?'mdi mdi-18px mdi-check-all':'mdi mdi-18px mdi-check'"
+                                *ngIf="item.userID==UserID"></i>
+                        </span>
+                        <span>{{item.createDate}}</span>
+                    </div>
+                    <div class="box-item-command" *ngIf="item.userID==UserID">
+                        <div class="box-item-command-cog">
+                            <i class="mdi mdi-24px mdi-cog"></i>
+                            <div class="box-item-command-menu">
+                                <button (click)="EditComment(item.commentID,item.message)" title="ویرایش">
+                                    <i class="mdi mdi-18px mdi-border-color"></i>
+                                </button>
+                                <button (click)="DeleteComment(item.commentID)" title="حذف">
+                                    <i class="mdi mdi-18px mdi-delete"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <img [routerLink]="['/User/Profile/User',item.userID]" [src]="ShowAvatar(index) ? item.imageName : ''"
+                    width="35" *ngIf="item.userID!=UserID&&item.imageName!=null">
+                <div class="img-null" *ngIf="item.userID!=UserID&&item.imageName==null"
+                    [class]="ShowAvatar(index)==false?'false':''">
+                    <p>{{CompressNameUser(item.name)}}</p>
+                </div>
+                <div *ngIf="item.userID!=UserID" class="Condition"
+                    [class]="CheckOnlineUser(item.userID)" [style]="ShowAvatar(index)?'':'opacity:0;'"></div>
+                <!-- <img [src]="ShowAvatar(index) ? item.imageName : ''" [alt]="ShowAvatar(index) ? item.name : ''" width="35"
+                    *ngIf="item.userID==UserID"> -->
+            </div>
+        </div>
+        <div *ngIf="AllComments.length==0" class="chat-empty">
+            <img src="/assets/img/Chat-Empty.svg" alt="پیامی وجود ندارد">
+            <p>پیامی وجود ندارد، شما اولین نفر باشید!</p>
+        </div>
+        <div class="chat type" *ngFor="let item of ListTyping">
+            <div class="box" *ngIf="item.chatId==ChatID">
+                <div class="box-item">
+                    <span> در حال تایپ </span>
+                    <span>.</span>
+                    <span>.</span>
+                    <span>.</span>                
+                </div>
+                <img src="{{item.imageName}}" alt="{{item.name}}" width="35" *ngIf="item.userID!=UserID&&item.imageName!=null"
+                    [routerLink]="['/Profile/User',item.userId]">
+                <div class="img-null" *ngIf="item.userID!=UserID&&item.imageName==null">
+                    <p>{{CompressNameUser(item.name)}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="comment-send">
+        <button class="btn" (click)="CommandComment()" title="ارسال" id="button-addon2">
+            <i class="mdi mdi-send"></i>
+        </button>
+        <!-- <input type="text" placeholder="  پیام خود را وارد کنید ..." aria-describedby="button-addon2"
+            class="form-control form-control-lg" #message (keyup)="Typing($event)" (focus)="ManageInputMessageFocus()"
+            (focusout)="ManageInputMessageFocus()" (enter)="CommandComment()"> -->
+        <textarea rows="1" placeholder="  پیام خود را وارد کنید ..." aria-describedby="button-addon2"
+            class="form-control form-control-lg" #message (keyup)="Typing($event)" (focus)="ManageInputMessageFocus()"
+            (focusout)="ManageInputMessageFocus()" (enter)="CommandComment()"></textarea>
+    </div>
+    <app-alert [ParentData]="AlertData" (ChildData)="CloseAlert()" *ngIf="IsAlert"></app-alert>
+</div>

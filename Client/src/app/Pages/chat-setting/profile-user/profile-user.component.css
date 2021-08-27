@@ -1,0 +1,122 @@
+.panel {
+  margin: 0.6rem 2rem;
+  border-top-left-radius: 25px;
+  /* background-color: #7d8597; */
+  box-shadow: 0px 0px 10px #bdb2ff;
+}
+
+.panel .panel-header {
+  background-color: #bdb2ff;
+  border-top-left-radius: 25px;
+  padding: 20px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.panel .panel-header img ,.img-null{
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  margin-left: 20px;
+  box-shadow: 1px 1px 5px #caffbf;
+}
+.img-null{
+  background-color: #fec89a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.panel .panel-header .avatar {
+  border-radius: 100px;
+}
+
+.panel .panel-header .avatar input[type="file"] {
+  opacity: 0;
+  display: none;
+}
+
+.panel .panel-header .avatar .label-upload {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 50%;
+}
+.panel .panel-header .btn-exit{
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.panel .panel-header .avatar label i {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fffffc;
+  cursor: pointer;
+  pointer-events: none;
+  margin-left: 10px;
+}
+
+.panel .panel-header .avatar label:hover i {
+  display: block;
+}
+
+.panel .panel-header span.online {
+  color: #fffffc;
+  font-size: 12px;
+  margin-right: 5px;
+}
+
+.panel .panel-header h2 {
+  color: #50514f;
+  position: relative;
+  top: 15px;
+}
+
+.panel .panel-body {
+  padding: 20px;
+  margin: 5px 0;
+}
+
+.panel .panel-body .panel-body-col {
+  background-color: #cdb4db;
+  margin: 10px 10px;
+  direction: rtl;
+  color: #fffffc;
+  transition: all 600ms;
+  display: flex;
+  align-items: center;
+  position: relative;
+  border-top-right-radius: 25px;
+  border-bottom-left-radius: 25px;
+}
+
+.panel .panel-body .panel-body-col.edit {
+  transition: all 1s ease-out;
+}
+
+
+.panel .panel-body .panel-body-col h3 {
+  background-color: #be95c4;
+  padding: 30px 25px;
+  border-top-right-radius: 25px;
+  border-bottom-left-radius: 25px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.panel .panel-body .panel-body-col h3>mat-icon {
+  font-size: 30px;
+}
+
+.panel .panel-body .panel-body-col span {
+  color: #50514f;
+  margin-right: 1rem;
+}

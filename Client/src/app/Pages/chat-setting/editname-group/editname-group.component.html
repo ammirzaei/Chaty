@@ -1,0 +1,14 @@
+<div class="chatSetting-dialog">
+    <h2 matDialogTitle>تغییر نام گروه</h2>
+    <mat-dialog-content>
+        <div class="mb-3">
+            <input type="text" class="form-control" placeholder="نام گروه" [value]="data.GroupName" #groupName>
+        </div>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+        <div class="command">
+            <button mat-raised-button class="bg-43aa8b" (click)="ChangeName()">تغییر</button>
+            <button mat-raised-button class="bg-b8b8ff" matDialogClose>لغو</button>
+        </div>
+    </mat-dialog-actions>
+</div>

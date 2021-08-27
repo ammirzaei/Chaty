@@ -1,0 +1,61 @@
+<div class="row">
+  <div class="col-3">
+    <nav class="nav">
+      <div class="logo" routerLink="/User">
+        <a routerLink="/User">
+          <span>Chaty</span>
+        </a>
+      </div>
+      <ul class="comment">
+        <li *ngFor="let item of AllChats;let index = index">
+          <a [routerLink]="['/User/Chat',item.chatID,item.title]" routerLinkActive="active">
+            <img *ngIf="item.image != null" [src]="item.image" [alt]="item.title" width="40"
+              height="40">
+            <div class="img-null" *ngIf="item.image==''||item.image==null">
+              <p>{{CompreesChatTitle(item.title)}}</p>
+            </div> 
+            <span>{{item.title}}</span>
+            <span [class]="item.countNoSee>0?'':'hidden'">{{item.countNoSee}}</span>
+          </a>
+          <span class="chat-setting" (click)="SelectSetting(index)" [class]="SelectIndexSetting==index?'active':''">
+            <i [class]="SelectIndexSetting==index?'mdi mdi-24px mdi-close':'mdi mdi-24px mdi-cog'"></i>
+          </span>
+          <ul [class]="SelectIndexSetting==index?'select':''">
+            <li *ngIf="item.method==='User'" (click)="_ChatSettingService.Show_GetProfileUser(item.chatID)">
+              پروفایل کاربر</li>
+            <li *ngIf="item.method==='Group'" (click)="_ChatSettingService.Show_GetProfileGroup(item.chatID)">
+              پروفایل گروه</li>
+            <li *ngIf="item.method==='Group'" (click)="_ChatSettingService.Dialog_AddUserToGroup(item.chatID)">
+              <span>افزودن عضو</span>
+            </li>
+            <li *ngIf="item.method==='User'" (click)="_ChatSettingService.Dialog_DeleteChat(item.chatID)">
+              <span>حذف گفتگو</span>
+            </li>
+            <li *ngIf="item.method==='Group'"
+              (click)="_ChatSettingService.Dialog_EditNameGroup(item.chatID,item.title)"><span>تغییر نام
+                گروه</span></li>
+            <li *ngIf="item.method==='Group'" (click)="_ChatSettingService.Dialog_ExitGroup(item.chatID)">
+              <span>خروج از گروه</span>
+            </li>
+            <li (click)="_ChatSettingService.Dialog_DeleteHistory(item.chatID)"><span>حذف تاریخچه من</span></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div class="col-9">
+    <div class="content">
+      <header class="menu">
+      </header>
+      <section class="router">
+        <router-outlet (activate)="OnActivate($event)"></router-outlet>
+      </section>
+      <div class="comment-new" [class]="IsShowCommentNew?'':'hide'">
+        <button (click)="OpenCommentNew()">
+          <i class="mdi mdi-24px mdi-border-color"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<app-alert [ParentData]="AlertData" (ChildData)="CloseAlert()" *ngIf="IsAlert"></app-alert>

@@ -1,0 +1,52 @@
+.home-account {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1;
+}
+
+.home-account>img {
+    width: 50%;
+    margin: 20px 0;
+    border-bottom-right-radius: 30%;
+    background-color: #fff;
+}
+
+.account {
+    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.1), 1px 1px 5px rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.account>.account-header {
+    display: flex;
+    border-bottom: 1px solid silver;
+}
+
+.account>.account-header li {
+    padding: 15px 20px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    flex: 1;
+    -ms-flex: 1;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.account>.account-header li:nth-child(2) {
+    border-top-left-radius: 10px;
+}
+
+.account>.account-header li:nth-child(1) {
+    border-top-right-radius: 10px;
+}
+
+.account>.account-header li.active {
+    background-color: #407bff;
+    color: #fff;
+}
+
+.account>.account-content {
+    padding: 25px;
+}

@@ -1,0 +1,59 @@
+<div class="panel">
+  <div class="panel-header">
+    <div class="avatar">
+      <input type="file" id="UploadAvatar" (change)="OnChangeAvatar($event)">
+      <label for="UploadAvatar" class="label-upload">
+        <img [src]="Profile.imageName" [alt]="Profile.name" *ngIf="Profile.imageName!=null">
+        <div *ngIf="Profile.imageName==null" class="img-null">
+          <p>{{ProfileNameCompress}}</p>  
+        </div>
+        <i class="mdi mdi-24px mdi-border-color"></i>
+      </label>
+    </div>
+    <div class="name">
+      <h2>{{Profile.name}}</h2>
+      <span class="online">آنلاین</span>
+    </div>
+    <button class="btn btn-outline-danger btn-sm btn-exit" (click)="LogOut()">خروج</button>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-12">
+        <div class="panel-body-col edit" (click)="EditProfile(Command.EditName)" title="نام">
+          <h3>
+            <i class="mdi mdi-24px mdi-account"></i>
+          </h3>
+          <span>{{Profile.name==Profile.mobile?'':Profile.name}}</span>
+          <p>ویرایش</p>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12">
+        <div class="panel-body-col edit" (click)="EditProfile(Command.EditBio)" title="بایو">
+          <h3>
+            <i class="mdi mdi-24px mdi-bio"></i>
+          </h3>
+          <span class="pre">{{Profile.bio}}</span>
+          <p>ویرایش</p>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12">
+        <div class="panel-body-col" title="موبایل">
+          <h3>
+            <i class="mdi mdi-24px mdi-cellphone"></i>
+          </h3>
+          <span>{{Profile.mobile}}</span>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12">
+        <div class="panel-body-col" title="تاریخ عضویت">
+          <h3>
+            <i class="mdi mdi-24px mdi-calendar-range"></i>
+          </h3>
+          <span>{{Profile.createDate}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-alert [ParentData]="AlertData" (ChildData)="CloseAlert()" *ngIf="IsAlert"></app-alert>
